@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "f724f6f4-daab-4142-8961-af46c2223c4c",
+		"name": "Sample apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17230518"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"olay1@gmail.com\",\n    \"password\" : \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://sample-api-fwbm.onrender.com/api/v1/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\" : \"Bounphone\",\n    \"surname\" : \"KOSADA\",\n    \"email\" : \"olay1@gmail.com\", \n    \"phone_number\" : \"2078582267\",\n    \"password\" : \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://sample-api-fwbm.onrender.com/api/v1/users/signup"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Create a new post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer $TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"content\": \"ນີ້ແມ່ນໂພສໃໝ່ຂອງຂ້ອຍ\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://sample-api-fwbm.onrender.com/api/v1/posts",
+						"description": "Generated from cURL: curl -X POST \"${BASE_URL}/posts\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer ${TOKEN}\" \\\n  -d '{\"content\": \"ນີ້ແມ່ນໂພສໃໝ່ຂອງຂ້ອຍ\"}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all posts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer $TOKEN"
+							}
+						],
+						"url": "BASE_URL/posts",
+						"description": "Generated from cURL: curl -X GET \"${BASE_URL}/posts\" \\\n  -H \"Authorization: Bearer ${TOKEN}\"\n"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
